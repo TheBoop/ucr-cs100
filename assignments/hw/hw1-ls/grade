@@ -1,2 +1,44 @@
-/ 100
+75/ 100
+Last update Sat May 2 00:00:07 2015 -0700
+
+
+Error checking for syscalls
+file: [src/ls.cpp] -0
+
+
+==32405== 32,816 bytes in 1 blocks are definitely lost in loss record 1 of 1 ==32405== definitely lost: 32,816 bytes in 1 blocks
+: memory leak found in valgrind (ls)
+==32407== 32,816 bytes in 1 blocks are definitely lost in loss record 1 of 4 ==32407== 32,816 bytes in 1 blocks are definitely lost in loss record 2 of 4 ==32407== 32,816 bytes in 1 blocks are definitely lost in loss record 3 of 4 ==32407== 32,816 bytes in 1 blocks are definitely lost in loss record 4 of 4 ==32407== definitely lost: 131,264 bytes in 4 blocks
+
+-25: memory leak found in valgrind (ls -laR)
+
+test ls output
+[34;49m1[0m              [32;49ma[0m              [39;49maa[0m             [39;49mb[0m              [39;49mc[0m              
++15: Extra - coloring works
+
+
+-5 for missing tests:
+-0: bin/ls -a.*-R flag does not work
+-0: bin/ls -R.*-a flag does not work
+-0: bin/ls -l.*-R flag does not work
+-0: bin/ls -R.*-l flag does not work
+-0: bin/ls -a.*-l flag does not work
+-0: bin/ls -l.*-a flag does not work
+
+
+-5 for missing tests:
+-0: bin/ls -a.*-l.*-R flag does not work
+-0: bin/ls -a.*-R.*-l flag does not work
+-0: bin/ls -l.*-a.*-R flag does not work
+-0: bin/ls -l.*-R.*-a flag does not work
+-0: bin/ls -R.*-a.*-l flag does not work
+-0: bin/ls -R.*-l.*-a flag does not work
+
+-5 for missing tests:
+-0: bin/ls -alR flag does not work
+-0: bin/ls -aRl flag does not work
+-0: bin/ls -laR flag does not work
+-0: bin/ls -lRa flag does not work
+-0: bin/ls -Ral flag does not work
+-0: bin/ls -Rla flag does not work
 
