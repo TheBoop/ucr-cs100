@@ -118,7 +118,7 @@ Try looking up [ASCII character codes](http://www.petefreitag.com/cheatsheets/as
 
 ###Repeated characters in our delimiter
 
-What if our delimiter set contains reapeated characters?
+What if our delimiter set contains repeated characters?
 We explained earlier how a tokenizer will match the text with the delimiters to know where to separate tokens, and because this boost tokenizer deals with only characters, the tokenizer will look in the set and match a character to a character.
 So if a character showed up one time in the set, then the tokenizer will know that this marks the separation of tokens.
 Any other subsequent appearances of this character won't mean anything since the tokenizer would have already parsed the token after seeing the first one.
